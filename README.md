@@ -56,11 +56,10 @@ np.save("X_normalized.npy", np.ndarray)
 ## **B. Cubes Divisible by 4 Problem**
 > Instructions: Create the first 100 positive integers, cube every element, then reshape the result into a 10x10 ndarray called `C`. Using a boolean condition on `C`, obtain every cubed value that is divisible by 4. Store the selected values in `div_by_4`. Display the shape of `C`, the array `div_by_4`, and the number of selected elements.
 
-Similarly to problem A, an array named `C` should be created with the first 100 positive integers, have these elements cubed, then reshaped into a 10x10 ndarray. Note that the key difference between problem A and C is that C will be using a known range of positive integers, which is 1 to 100, and not a randomly generated matrix like A has.
+Similarly to problem A, an array named `C` should be created with the first 100 positive integers, have these elements cubed, then reshaped into a 10x10 ndarray. Note that the key difference between problem A and B is that B will be using a known range of positive integers, which is 1 to 100, and not a randomly generated matrix like problem A has.
 
 ### Solution to the Problem
 To generate a range of integers from 1 to 100, NumPy’s `arange()` can be used to set this range as demonstrated:
-
 ```python
 C = np.arange(1, 101)
 print(C)
