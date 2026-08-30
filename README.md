@@ -70,13 +70,25 @@ Oftentimes, the formal NumPy function for exponentiation is defined as `np.power
 ```python
 C = np.arange(1, 101).reshape(10,10) ** 3
 print(C)
+#Output
+C = [[  1       8      27      64      125     216     343     512     729     1000  ]
+     [ 1331    1728    2197    2744    3375    4096    4913    5832    6859    8000  ]
+     [ 9261   10648    12167   13824   15625   17576   19683   21952   24389   27000 ]
+     [ 29791   32768   35937   39304   42875   46656   50653   54872   59319   64000 ]
+     [ 68921   74088   79507   85184   91125   97336   103823  110592  117649  125000]
+     [ 132651  140608  148877  157464  166375  175616  185193  195112  205379  216000]
+     [ 226981  238328  250047  262144  274625  287496  300763  314432  328509  343000]
+     [ 357911  373248  389017  405224  421875  438976  456533  474552  493039  512000]
+     [ 531441  551368  571787  592704  614125  636056  658503  681472  704969  729000]
+     [ 753571  778688  804357  830584  857375  884736  912673  941192  970299 1000000]]
+
 ```
 With the cubed array, the problem now asks to obtain every cubed value that is divisible by 4 to be stored in the variable `div_by_4` while preserving the normal row-major selection order of the array. Based on the phrase “divisible by 4”, a boolean condition utilizing the modulo `%` and the equality comparison `==` numerical operators is expected. This is because `%` means it will divide every element by `4` and return the remainder while `==` means it will check if the remainder is exactly `0` and that would mean that the cubed value is exactly divisible by 4. The complete syntax is as follows:
 ```python
 div_by_4 = C[C % 4 == 0]
 print(div_by_4)
 ```
-The correct solution when the output is returned should have 50 selected elements; starting from 8 and ending at 1,000,000. An alternative answer would be `(10,5)` or `(5,10)`, which is the same as 50 but in `row` and `column` form. The array is then saved as:
+The correct solution when the output is returned should have `50` selected elements; starting from 8 and ending at 1,000,000. An alternative answer would be `(10,5)` or `(5,10)`, which is the same as 50 but in `row` and `column` form. The array is then saved as:
 ```python
 np.save("div_by_4.npy", np.ndarray)
 ```
@@ -84,11 +96,37 @@ np.save("div_by_4.npy", np.ndarray)
 ## **C. Above-Mean Squares Problem**
 > Instructions: Create a 6x6 ndarray named `S` containing the squares of the first 36 positive integers in increasing row-major order. Acquire the mean of array `S`and store it in `S_mean`. Use boolean filtering to select only the elements greater than `S_mean` then store these values in `above_mean`. Display array `S`, `S_mean`, `above_mean`, and the number of selected elements.
 
-Lorem ipsum
+To create the 6x6 ndarray containing the squares of the first 36 positive integers, the solution from problem B can be recycled here as it is nearly the same with the exception of using the *greater than* operator.
 
 ### Solution to the Problem
-Lorem ipsum
-
+Using the NumPy function `arange(1,37)`, an array of the first 36 positive integers will be created and named as ndarray `S` and using the shorthand syntax for exponentiation `**`, the syntax should look and return as:
+```python
+S = np.arange(1, 37).reshape(6,6) ** 2
+print(S)
+#Output
+S = [[   1    4    9   16   25   36]
+     [  49   64   81  100  121  144]
+     [ 169  196  225  256  289  324]
+     [ 361  400  441  484  529  576]
+     [ 625  676  729  784  841  900]
+     [ 961 1024 1089 1156 1225 1296]]
+```
+Then, to acquire the mean of all elements of `S`, use `S.mean()` and store it in `S_mean`, likewise below. The mean should be `450.17` as its returned output.
+```python
+S_mean = S.mean()
+print("Array S has a rounded mean of: ", np.round(S_mean,2))
+```
+Lastly, the problem provides a condition to select only the elements strictly greater than `S_mean`, which calls for a case of boolean filtering. Here, the conditional operators of NumPy such as greater than `>` can be used to simulate the condition given. Let these selected elements be stored in `above_mean` as shown:
+```python
+above_mean = S[S > S_mean]
+print(above_mean)
+#Output
+above_mean = [ 484  529  576  625  676  729  784  841  900  961  1024  1089  1156  1225  1296 ]
+```
+`above_mean` should project `15` selected elements, with the first element being `484` and the last as `1296`. The array is then saved as:
+```python
+np.save("above_mean.npy", np.ndarray)
+```
 ---
 ### **Thank you for Reading!**
 To view the complete program for Programming Assessment 2, refer to this link: [Programming Assessment 2 by Jazmine Rafols](https://github.com/Jazmine-Rafols/RAFOLS_ECE2112-PA2/blob/f06cf941dd94db57844c786fd028d6b6e0dad2fc/RAFOLS_Programming_Assessment-2.ipynb)
