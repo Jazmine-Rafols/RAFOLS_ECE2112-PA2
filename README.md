@@ -129,7 +129,7 @@ np.save("above_mean.npy", np.ndarray)
 ```
 ---
 ### **Thank you for Reading!**
-To view the complete program for Programming Assessment 2, refer to this link: [Programming Assessment 2 by Jazmine Rafols](https://github.com/Jazmine-Rafols/RAFOLS_ECE2112-PA2/blob/f06cf941dd94db57844c786fd028d6b6e0dad2fc/RAFOLS_Programming_Assessment-2.ipynb)
+To view the complete program for Programming Assessment 2, refer to this link: [Programming Assessment 2 by Jazmine Rafols](https://github.com/Jazmine-Rafols/RAFOLS_ECE2112-PA2/blob/b1ddd5ad001672371e05d687ae692e04788a9072/RAFOLS_Programming_Assessment-2.ipynb)
 ### File Version History
 **August 29, 2026** - Initial upload of (draft) README file on GitHub. \
-**August 30, 2026** - Added the discussion areas of problems A, B, and C.
+**August 30, 2026** - Added the discussion areas of problems A, B, and C; P.A. 2 was reuploaded due to display/typo errors. \
