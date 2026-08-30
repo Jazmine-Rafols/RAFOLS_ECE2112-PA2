@@ -56,11 +56,31 @@ np.save("X_normalized.npy", np.ndarray)
 ## **B. Cubes Divisible by 4 Problem**
 > Instructions: Create the first 100 positive integers, cube every element, then reshape the result into a 10x10 ndarray called `C`. Using a boolean condition on `C`, obtain every cubed value that is divisible by 4. Store the selected values in `div_by_4`. Display the shape of `C`, the array `div_by_4`, and the number of selected elements.
 
-Loren ipsum
+Similarly to problem A, an array named `C` should be created with the first 100 positive integers, have these elements cubed, then reshaped into a 10x10 ndarray. Note that the key difference between problem A and C is that C will be using a known range of positive integers, which is 1 to 100, and not a randomly generated matrix like A has.
 
 ### Solution to the Problem
-Lorem ipsum
+To generate a range of integers from 1 to 100, NumPy’s `arange()` can be used to set this range as demonstrated:
 
+```python
+C = np.arange(1, 101)
+print(C)
+```
+The syntax `arange(1, 101)` essentially means, from the lowest possible integer 1, it has the highest possible value of, but excluding, 101. The output would be a complete array of positive integers from 1 to 100. To reshape the dimensions of the ndarray to a 10x10 shape, the NumPy function: `.reshape(10,10)` is used.
+
+Oftentimes, the formal NumPy function for exponentiation is defined as `np.power()`, where within the parenthesis is the array to be exponentiated then followed by the power. However, for ease of use and cleaner syntax, the shorthand version `**` is used. This should present a 10x10 ndarray where the starting element is `1` and its last is `1,000,000`.
+```python
+C = np.arange(1, 101).reshape(10,10) ** 3
+print(C)
+```
+With the cubed array, the problem now asks to obtain every cubed value that is divisible by 4 to be stored in the variable `div_by_4` while preserving the normal row-major selection order of the array. Based on the phrase “divisible by 4”, a boolean condition utilizing the modulo `%` and the equality comparison `==` numerical operators is expected. This is because `%` means it will divide every element by `4` and return the remainder while `==` means it will check if the remainder is exactly `0` and that would mean that the cubed value is exactly divisible by 4. The complete syntax is as follows:
+```python
+div_by_4 = C[C % 4 == 0]
+print(div_by_4)
+```
+The correct solution when the output is returned should have 50 selected elements; starting from 8 and ending at 1,000,000. An alternative answer would be `(10,5)` or `(5,10)`, which is the same as 50 but in `row` and `column` form. The array is then saved as:
+```python
+np.save("div_by_4.npy", np.ndarray)
+```
 ---
 ## **C. Above-Mean Squares Problem**
 > Instructions: Create a 6x6 ndarray named `S` containing the squares of the first 36 positive integers in increasing row-major order. Acquire the mean of array `S`and store it in `S_mean`. Use boolean filtering to select only the elements greater than `S_mean` then store these values in `above_mean`. Display array `S`, `S_mean`, `above_mean`, and the number of selected elements.
