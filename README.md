@@ -6,7 +6,7 @@
 > At the end of Programming Assessment 2, the student should be able to create and manipulate NumPy arrays using appropriate NumPy functions, perform vectorized numerical operations, utilize boolean conditions, and compute array statistics for each problem given. The NumPy arrays shall be saved as .npy files.
 
 ## **A. Reproducible Normalization Problem**
-> Instructions: Create a reproducible random 5x5 integer ndarray named `X`. Normalize array `X` using the mean normalization formula, where the program shall get the mean of all 25 elements and the standard deviation to be stored in the variable `X_normalized`. Display array `X`, `X_normalized`, its mean, and its standard deviation with up to floating point rounding. 
+> **Instructions:** Create a reproducible random 5x5 integer ndarray named `X`. Normalize array `X` using the mean normalization formula, where the program shall get the mean of all 25 elements and the standard deviation to be stored in the variable `X_normalized`. Display array `X`, `X_normalized`, its mean, and its standard deviation with up to floating point rounding. 
 
 The problem states that a reproducible random 5x5 ndarray should be created to be called as ndarray `X`. This can be created through using the NumPy library, in which it shall be initialized as:
 ```python
@@ -54,7 +54,7 @@ np.save("X_normalized.npy", np.ndarray)
 ```
 ---
 ## **B. Cubes Divisible by 4 Problem**
-> Instructions: Create the first 100 positive integers, cube every element, then reshape the result into a 10x10 ndarray called `C`. Using a boolean condition on `C`, obtain every cubed value that is divisible by 4. Store the selected values in `div_by_4`. Display the shape of `C`, the array `div_by_4`, and the number of selected elements.
+> **Instructions:** Create the first 100 positive integers, cube every element, then reshape the result into a 10x10 ndarray called `C`. Using a boolean condition on `C`, obtain every cubed value that is divisible by 4. Store the selected values in `div_by_4`. Display the shape of `C`, the array `div_by_4`, and the number of selected elements.
 
 Similarly to problem A, an array named `C` should be created with the first 100 positive integers, have these elements cubed, then reshaped into a 10x10 ndarray. Note that the key difference between problem A and B is that B will be using a known range of positive integers, which is 1 to 100, and not a randomly generated matrix like problem A has.
 
@@ -94,7 +94,7 @@ np.save("div_by_4.npy", np.ndarray)
 ```
 ---
 ## **C. Above-Mean Squares Problem**
-> Instructions: Create a 6x6 ndarray named `S` containing the squares of the first 36 positive integers in increasing row-major order. Acquire the mean of array `S`and store it in `S_mean`. Use boolean filtering to select only the elements greater than `S_mean` then store these values in `above_mean`. Display array `S`, `S_mean`, `above_mean`, and the number of selected elements.
+> **Instructions:** Create a 6x6 ndarray named `S` containing the squares of the first 36 positive integers in increasing row-major order. Acquire the mean of array `S`and store it in `S_mean`. Use boolean filtering to select only the elements greater than `S_mean` then store these values in `above_mean`. Display array `S`, `S_mean`, `above_mean`, and the number of selected elements.
 
 To create the 6x6 ndarray containing the squares of the first 36 positive integers, the solution from problem B can be recycled here as it is nearly the same with the exception of using the *greater than* operator.
 
