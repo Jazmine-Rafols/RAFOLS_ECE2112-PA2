@@ -133,3 +133,4 @@ To view the complete program for Programming Assessment 2, refer to this link: [
 ### File Version History
 **August 29, 2026** - Initial upload of (draft) README file on GitHub. \
 **August 30, 2026** - Added the discussion areas of problems A, B, and C; P.A. 2 was reuploaded due to display/typo errors. \
+**September 4, 2026** - Slight format changes and fixed typos.
